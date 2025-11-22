@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>导游证</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .header {
+            background-color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+        }
+
+        .back-btn {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+        }
+
+        .back-btn svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .header-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .app-tag {
+            text-align: right;
+            padding: 10px 15px 0 15px;
+            font-size: 12px;
+            color: #96BC80;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .app-tag svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .level-banner {
+            padding: 15px 0;
+            text-align: center;
+            margin: 20px 0 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .level-line {
+            flex: 1;
+            height: 20px;
+            background: #96BC80;
+        }
+
+        .level-text {
+            font-size: 40px;
+            font-weight: bold;
+            color: #96BC80;
+            letter-spacing: 8px;
+            white-space: nowrap;
+        }
+
+        .certificate-card {
+            background: #96BC80;
+            margin: 0 0 15px 0;
+            padding: 3px 20px 8px;
+            border-radius: 0;
+        }
+
+        .photo-container {
+            width: 150px;
+            height: 200px;
+            margin: 15px auto 10px;
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name-section {
+            text-align: center;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .name-cn {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .name-en {
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .info-section {
+            background-color: white;
+            margin: 20px;
+            padding: 20px 20px;
+            border-radius: 8px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: #96BC80;
+            margin-bottom: 8px;
+        }
+
+        .info-value {
+            font-size: 17px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .footer {
+            background-color: #96BC80;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            cursor: move;
+            position: relative;
+            user-select: none;
+        }
+
+        .footer:hover {
+            opacity: 0.9;
+        }
+
+        .footer-text {
+            color: white;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <div class="back-btn" onclick="window.history.back()">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="header-title">导游证</div>
+        </div>
+
+        <!-- APP标签 -->
+        <div class="app-tag">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4L4 20M4 4L14 7L14 17L4 14" stroke="#96BC80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4L14 7M4 14L14 17" stroke="#96BC80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            APP开启
+        </div>
+
+        <!-- 级别横幅 -->
+        <div class="level-banner">
+            <div class="level-line"></div>
+            <div class="level-text">初级导游</div>
+            <div class="level-line"></div>
+        </div>
+
+        <!-- 证件卡片 -->
+        <div class="certificate-card">
+            <!-- 照片区域（直接显示图片） -->
+            <div class="photo-container">
+                <img src="https://7072-prod-8ghn6n0naa53b024-1375622966.tcb.qcloud.la/11.22/b17850d508d271d358050ca0666593d.jpg?sign=d7e289d7bc4928ecbb380d41433f582b&t=1763781485" alt="证件照片">
+            </div>
+
+            <!-- 姓名 -->
+            <div class="name-section">
+                <div class="name-cn">汪凡</div>
+                <div class="name-en">WANG FAN</div>
+            </div>  
+        </div>
+
+        <!-- 信息部分 -->
+        <div class="info-section">
+            <div class="info-item">
+                <div class="info-label">导游证号</div>
+                <div class="info-value">WUY814E</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">导游语种</div>
+                <div class="info-value">普通话</div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="footer-text">中华人民共和国文化和旅游部监制</div>
+        </div>
+    </div>
+
+    <script>
+        // 保留底部拖动功能（如需移除可直接删除此脚本）
+        let isDragging = false;
+        let startY = 0;
+        let startMarginTop = 0;
+        const footer = document.querySelector('.footer');
+
+        footer.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startY = e.clientY;
+            const style = window.getComputedStyle(footer);
+            startMarginTop = parseInt(style.marginTop);
+            footer.style.transition = 'none';
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            const deltaY = e.clientY - startY;
+            const newMarginTop = startMarginTop + deltaY;
+            if (newMarginTop >= 10 && newMarginTop <= 200) {
+                footer.style.marginTop = newMarginTop + 'px';
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            if (isDragging) {
+                isDragging = false;
+                footer.style.transition = '';
+            }
+        });
+
+        // 触摸设备支持
+        footer.addEventListener('touchstart', function(e) {
+            isDragging = true;
+            startY = e.touches[0].clientY;
+            const style = window.getComputedStyle(footer);
+            startMarginTop = parseInt(style.marginTop);
+            footer.style.transition = 'none';
+        });
+
+        document.addEventListener('touchmove', function(e) {
+            if (!isDragging) return;
+            const deltaY = e.touches[0].clientY - startY;
+            const newMarginTop = startMarginTop + deltaY;
+            if (newMarginTop >= 10 && newMarginTop <= 200) {
+                footer.style.marginTop = newMarginTop + 'px';
+            }
+        });
+
+        document.addEventListener('touchend', function() {
+            if (isDragging) {
+                isDragging = false;
+                footer.style.transition = '';
+            }
+        });
+    </script>
+</body>
+</html>
